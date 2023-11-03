@@ -1,0 +1,9 @@
+Depends:
+ python3-all,
+ python3-pytest,
+ python3-setuptools,
+ python3-tenacity,
+ python3-tornado,
+ python3-typing-extensions,
+ python3-typeguard,
+Test-Command: set -e; for py in $(py3versions -i); do echo "[*] testing on $py:"; $py -Wd -m pytest -v -x 2>&1; done

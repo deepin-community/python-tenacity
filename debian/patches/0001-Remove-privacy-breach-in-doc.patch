@@ -1,0 +1,29 @@
+From: Thomas Goirand <zigo@debian.org>
+Date: Fri, 4 Aug 2017 18:45:26 -0400
+Subject: Remove privacy breach in doc
+
+Forwarded: not-needed
+Last-Update: 2019-09-24
+---
+ doc/source/index.rst | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+Index: python-tenacity/doc/source/index.rst
+===================================================================
+--- python-tenacity.orig/doc/source/index.rst
++++ python-tenacity/doc/source/index.rst
+@@ -1,14 +1,5 @@
+ Tenacity
+ ========
+-.. image:: https://img.shields.io/pypi/v/tenacity.svg
+-    :target: https://pypi.python.org/pypi/tenacity
+-
+-.. image:: https://circleci.com/gh/jd/tenacity.svg?style=svg
+-    :target: https://circleci.com/gh/jd/tenacity
+-
+-.. image:: https://img.shields.io/endpoint.svg?url=https://api.mergify.com/badges/jd/tenacity&style=flat
+-   :target: https://mergify.io
+-   :alt: Mergify Status
+ 
+ Tenacity is an Apache 2.0 licensed general-purpose retrying library, written in
+ Python, to simplify the task of adding retry behavior to just about anything.

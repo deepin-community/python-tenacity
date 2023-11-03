@@ -1,0 +1,22 @@
+From: Thomas Goirand <zigo@debian.org>
+Date: Tue, 19 Nov 2019 14:35:28 +0100
+Subject: Remove reno sphinx extension
+
+Forwarded: no
+Last-Update: 2019-09-24
+---
+ doc/source/conf.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+Index: python-tenacity/doc/source/conf.py
+===================================================================
+--- python-tenacity.orig/doc/source/conf.py
++++ python-tenacity/doc/source/conf.py
+@@ -27,7 +27,6 @@ sys.path.insert(0, os.path.abspath("../.
+ extensions = [
+     "sphinx.ext.doctest",
+     "sphinx.ext.autodoc",
+-    "reno.sphinxext",
+ ]
+ 
+ # -- Options for sphinx.ext.doctest  -----------------------------------------
