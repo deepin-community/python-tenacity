@@ -1,0 +1,3054 @@
+commit c5a8abb404c50bddd9881c69b995c343ab7b4991
+Author: Daniel Fortunov <asqui@users.noreply.github.com>
+Date:   Fri Apr 24 10:30:10 2020 +0100
+
+    before_sleep_log: Add an exc_info option to include exception tracebacks (#227)
+    
+    * before_sleep_log: More specific tests to show how log messages look
+    
+    * before_sleep_log: Add an exc_info option to include exception tracebacks
+    
+    * fixup! before_sleep_log: Add an exc_info option to include exception tracebacks
+    
+    Fix pep8 failures.
+    
+    * fixup! before_sleep_log: Add an exc_info option to include exception tracebacks
+    
+    * Add release note.
+
+commit 196332c1f44a8830744984438554b008f4208254
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 11:30:44 2020 +0200
+
+    docs: fix duplicate function names (#226)
+
+commit 0d45cd6e3eea5443094c038906794ce408d08f19
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 11:26:23 2020 +0200
+
+    ci: merge PR from me
+
+commit ce63d28eb9396dd5a14e08246cc488b8e445408b
+Author: Willem <himself@willemthiart.com>
+Date:   Fri Apr 17 21:21:35 2020 +1200
+
+    AsyncRetrying can use an async iterator (#222)
+
+commit ea09cca3fbdf4bb1f7c4484fe5db30f2b2153802
+Author: Matthew Planchard <mplanchard@users.noreply.github.com>
+Date:   Fri Apr 3 03:37:47 2020 -0500
+
+    Add minimal type definitions for @retry decorator (#221)
+    
+    * Add type definitions for @retry decroator
+    
+    * TEST: add test for retry decorator typing
+    
+    * LINT: fix pep8 error
+    
+    * LINT: line length
+    
+    * LINT: line after docstring
+    
+    Co-authored-by: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+
+commit 30e77b16ebd08609cccea8754c40bf959c3f7c94
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 10:33:43 2020 +0200
+
+    ci(mergify): use squash merge
+
+commit b1c98ef7582565b3472bd4fb1bc0cc7907a30121
+Merge: 49c67bd d49d2dc
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Wed Feb 26 10:36:22 2020 +0000
+
+    Merge pull request #215 from andersea/master
+    
+    Use PEP 492 async/await syntax
+
+commit d49d2dcb650fb0a2d35b1de023bcb15a67284f82
+Author: Anders Ellenshøj Andersen <andersa@ellenshoej.dk>
+Date:   Tue Feb 25 21:46:02 2020 +0100
+
+    Trailing whitespace
+
+commit 615523c1b90416cd5fc7d0edba92e71523f54f6b
+Author: Anders Ellenshøj Andersen <andersa@ellenshoej.dk>
+Date:   Tue Feb 25 21:42:20 2020 +0100
+
+    Anticipate random scheduling
+
+commit 0a6e87e2f41a758dce801f59e6bedf2a20b7def3
+Author: Anders Ellenshøj Andersen <andersa@ellenshoej.dk>
+Date:   Sat Feb 22 12:26:21 2020 +0100
+
+    Flake8 fixes
+
+commit 66de0110844a742b820ab6c1f29edb19ed2e5908
+Author: Anders Ellenshøj Andersen <andersa@ellenshoej.dk>
+Date:   Sat Feb 22 12:09:20 2020 +0100
+
+    Use PEP 492 async/await syntax
+
+commit 49c67bdf63d5ad61ba12d2802c7267eb767654e0
+Merge: 96209e3 b0e9df1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Dec 13 10:42:26 2019 +0100
+
+    Merge pull request #209 from jd/fix-mergify-logo
+    
+    Update Mergify badge URL
+
+commit b0e9df1da24de41c2bc7bec6d9e6bcf3df4a87e0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Dec 13 10:41:18 2019 +0100
+
+    Update Mergify badge URL
+
+commit 96209e3ea41dd5abf87f7577001373e6f98e634e
+Merge: 16c76f1 0376abe
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Thu Nov 28 09:33:11 2019 +0000
+
+    Merge pull request #208 from alexwlchan/fix-api-docs
+    
+    Fix the sphinx build for the API reference
+
+commit 0376abe0d63dd89ca5e0599581d9b033ad479189
+Author: Alex Chan <alex@alexwlchan.net>
+Date:   Wed Nov 27 22:32:23 2019 +0000
+
+    Fix a reference to TornadoRetrying in the API reference
+
+commit 9b3126e61aec25ac836140ce9404425fdb64853e
+Author: Alex Chan <alex@alexwlchan.net>
+Date:   Wed Nov 27 22:32:11 2019 +0000
+
+    Ensure sphinx can find tenacity when it runs autodoc
+    
+    This means that building the documentation creates an API reference.
+    
+    In the most recent build on ReadTheDocs [1], at the point where sphinx
+    actually runs, there are lots of errors from autodoc of the form:
+    
+        WARNING: autodoc: failed to import function 'retry' from module
+            'tenacity'; the following exception was raised:
+        No module named 'tenacity'
+    
+    That's because Sphinx doesn't know how to find tenacity.  By adding the
+    directory containing tenacity to `sys.path`, autodoc is able to find
+    tenacity and create the API reference.
+    
+    This is based on the template created by the sphinx-quickstart tool. [2]
+    
+    [1]: https://readthedocs.org/projects/tenacity/builds/9021631/
+    [2]: https://github.com/sphinx-doc/sphinx/blob/a503ed8b781cd19f601b5294518aeb8adb9f011e/sphinx/templates/quickstart/conf.py_t#L9-L11
+
+commit 16c76f1878dc26e4acd47cc8058b3b6441e7107d
+Merge: 6cb9fe1 1858d74
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 18 18:01:16 2019 -0500
+
+    Merge pull request #206 from jd/add-py38
+    
+    Add Python 3.8 in tox.ini
+
+commit 1858d74a44b178cf8c22ac0be120024a4bafebe2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 18 17:49:02 2019 -0500
+
+    Add Python 3.8 in tox.ini
+
+commit 6cb9fe14554d05494b17f47db8e85b6183f8767f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Nov 6 13:08:35 2019 +0100
+
+    Fix upload job
+
+commit ffe32b9ac534b874162ba374e10d67d496769755
+Merge: 1e2402e d7fb255
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Nov 6 11:50:01 2019 +0100
+
+    Merge pull request #202 from jd/release-auto
+    
+    Release via CircleCI
+
+commit d7fb255bf4b20549db40fc4fd831a01359d7094c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Nov 6 11:44:23 2019 +0100
+
+    Release via CircleCI
+
+commit 1e2402e56b4828a3a926fc19b3ff16bfb34fba36
+Merge: 423848c adf15a7
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Tue Nov 5 15:49:47 2019 +0000
+
+    Merge pull request #191 from bersace/context-manager
+    
+    Retry code block with context manager
+
+commit adf15a7be6035824887614cde751d6a9257e400d
+Merge: 3646aea 423848c
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Tue Nov 5 15:32:14 2019 +0000
+
+    Merge branch 'master' into context-manager
+
+commit 423848ce328326542a0287c609c21e3d76ef7873
+Merge: dcabb39 3bae79e
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Tue Nov 5 14:40:18 2019 +0000
+
+    Merge pull request #201 from bersace/async
+    
+    Support async keyword properly
+
+commit 3bae79e71519ed1a34cea53dcf98903ef02eb6c7
+Author: Étienne BERSAC <bersace03@cae.li>
+Date:   Tue Nov 5 14:40:29 2019 +0100
+
+    Ensure coroutine passes asyncio.iscoroutinefunction
+
+commit c15dd3f75971e5047c304d9e4e25d7bd97b73dfe
+Author: Étienne BERSAC <bersace03@cae.li>
+Date:   Tue Nov 5 14:33:08 2019 +0100
+
+    Test async keyword
+    
+    This is possible since tenacity dropped support for 3.4.
+
+commit 3646aea1602a4854779eaae66a613e3262c7b5d0
+Author: Étienne BERSAC <etienne.bersac@dalibo.com>
+Date:   Tue Aug 27 10:19:03 2019 +0200
+
+    Retry code block with context manager
+
+commit dcabb396a4b851da44d2fb6fed84d6540cc2d93c
+Merge: 2391424 2719a98
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Tue Nov 5 08:24:43 2019 +0000
+
+    Merge pull request #200 from Dectinc/master
+    
+    Fix setup.cfg typo
+
+commit 2719a98744d43835da17f53f0853a17a9b28af64
+Author: Chen Shijiang <chenshijiang@evision.ai>
+Date:   Tue Nov 5 16:11:46 2019 +0800
+
+    Fix setup.cfg typo
+
+commit 2391424ed00d732be99d09bbc6aa43a7a635fd40
+Merge: a3e4747 8f8a5be
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Wed Oct 30 12:24:01 2019 +0000
+
+    Merge pull request #198 from BATS/py2-compatability-for-_asyncio-module
+    
+    Ensure that the _asyncio.py module can be compiled, even on Python 2
+
+commit 8f8a5be8574da3a9f0f5aecf093bf0f28deb051c
+Author: Daniel Fortunov <dfortunov@bats.com>
+Date:   Wed Oct 30 10:59:33 2019 +0000
+
+    Ensure that the _asyncio.py module can be compiled, even on Python 2
+    
+    Use the same pattern of conditional importing of _compat.py as used in
+    __init__.py to ensure that _compat.py can be compiled on Python 2.
+    
+    Fixes jd/tenacity#88
+
+commit a3e47471834715fd18e85bfa415e454534577a16
+Merge: ca4c418 72334a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 28 12:17:35 2019 +0100
+
+    Merge pull request #194 from jd/py3.8
+    
+    Add support for Python 3.8
+
+commit 72334a7f5a5e4838d2ee7df0cca1751e79da1a3a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 28 12:16:07 2019 +0100
+
+    Add support for Python 3.8
+
+commit ca4c4184b56ba635a064b3c06accd9aa376cbefd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 28 12:14:30 2019 +0100
+
+    Fix description invalid for PyPI
+
+commit 545a337cc9a02098ee779c5776cf0c360287d955
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 28 12:11:34 2019 +0100
+
+    setup: fix description
+
+commit 46df478c18088a7128eebea13da6b2768ef53ebe
+Merge: 2775f13 269c95d
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Mon Oct 28 11:04:25 2019 +0000
+
+    Merge pull request #183 from mezgerj/feature/182/pickleable_exceptions
+    
+    Feature/182/pickleable exceptions
+
+commit 269c95dedcb957991692903122ae1142de4590c0
+Author: mezgerj <mezger.10@gmail.com>
+Date:   Tue Oct 8 00:39:52 2019 -0400
+
+    Tenacity-182 added additional line before test case class
+
+commit 70103c42efa801eca239023d512e5fc2a5564f67
+Author: mezgerj <mezger.10@gmail.com>
+Date:   Tue Oct 8 00:38:04 2019 -0400
+
+    Tenacity-182 added newline to end of file to make pep8 linter happy
+
+commit 329d1af3218862578c2d02a3a4fc11ae7a6abb67
+Merge: 8252515 2775f13
+Author: mezgerj <mezger.10@gmail.com>
+Date:   Wed Sep 18 12:03:15 2019 -0400
+
+    Merge branch 'master' into feature/182/pickleable_exceptions
+
+commit 2775f13b34b3ec67a774061a77fcd4e1e9b4157c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 16 10:45:16 2019 +0200
+
+    Fix packages option in setup.cfg
+    
+    This was broken with pbr removal.
+    
+    Fixes #190
+
+commit 724a9ec1028c7096ecab9e58de20a0e39ac22286
+Merge: 9272357 76c3c95
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Fri Aug 16 07:53:56 2019 +0000
+
+    Merge pull request #189 from malthe/fix-iteritems-call
+    
+    Fix Python 3 compatibility
+
+commit 76c3c958647f12202fa0f05d80f06651479d8bde
+Author: Malthe Borch <mborch@gmail.com>
+Date:   Fri Aug 16 09:27:00 2019 +0200
+
+    Fix Python 3 compatibility
+    
+    The `dict.iteritems` method has gone away in Python 3.
+
+commit 8252515831dcc34174930af597be0a9cc19be181
+Author: John Mezger <mezger.10@gmail.com>
+Date:   Thu Jul 18 19:41:29 2019 -0400
+
+    Tenacity-182 Reverted white space changes
+
+commit c9f1cd7f5cef1bf55634dc4a70077f7a171fe27b
+Author: John Mezger <mezger.10@gmail.com>
+Date:   Wed Jul 17 23:59:51 2019 -0400
+
+    Tenacity-182 Added fix for passing original args to .args attribute by calling init of super with arguments
+
+commit e6209915dac0c0be3b02001c737e6f074ea33be6
+Author: John Mezger <mezger.10@gmail.com>
+Date:   Wed Jul 17 23:56:07 2019 -0400
+
+    Tenacity-182 Added test case to recreate issue
+
+commit 9272357166503c62ba23406c7f38b8b208ef33c5
+Merge: 531a28b 8255ac3
+Author: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com>
+Date:   Fri Jun 21 04:50:44 2019 +0000
+
+    Merge pull request #179 from cyounkins/exponent
+    
+    Reduce wait_exponential power by 1 so first wait is equal to multiplier
+
+commit 8255ac3365e01c9f4a1f245c5e7c2da650dabca1
+Merge: aac4307 531a28b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jun 21 06:49:30 2019 +0200
+
+    Merge branch 'master' into exponent
+
+commit 531a28b921e27e916dde6346f98868c66bc4fcb2
+Merge: 55aa17c 4dbc9fe
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jun 21 06:48:17 2019 +0200
+
+    Merge pull request #180 from jd/use-circleci
+    
+    Switch to CircleCI
+
+commit 4dbc9fec13cb41bdb5bdc697ca0c5a729b608873
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jun 21 06:45:58 2019 +0200
+
+    Switch to CircleCI
+
+commit aac4307a0aa30d7befd0ebe4212ee4fc69083a95
+Author: Craig Younkins <cyounkins@gmail.com>
+Date:   Thu Jun 20 17:13:45 2019 -0400
+
+    Reduce wait_exponential power by 1 so first wait is equal to multiplier
+
+commit 55aa17c8cc018aecda1828e8fbc64840165549fe
+Merge: 54e6002 04f9762
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Thu Jun 20 07:47:51 2019 +0000
+
+    Merge pull request #178 from cyounkins/tests
+    
+    Corrections and improvements to wait_random_exponential tests
+
+commit 04f9762b6e80c7da980c1a5041c29d624508d851
+Author: Craig Younkins <cyounkins@gmail.com>
+Date:   Wed Jun 19 18:14:39 2019 -0400
+
+    Corrections and improvements to wait_random_exponential tests
+    
+    Added _assert_inclusive_delta to more easily verify statistical averages are within a delta of a target
+    Replaced tests that used old-style retry state with calls to make_retry_state
+    Removed tests that checked the 0th attempt as the first wait uses attempt 1
+
+commit 54e600255b1649624eeb60c3f54d3e0a28f1102d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:34:21 2019 +0200
+
+    Revert "Reduce wait_exponential power by 1 so first wait is equal to multiplier"
+    
+    This reverts commit d194c4895f90e92b5ba3a019642135b4cf3a904d.
+
+commit e0b1c26f425ebda145b9a5aa0236f259a052bc8a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:33:37 2019 +0200
+
+    Use new Mergify image
+
+commit 615109177b2d495a074837e2a0757942e3f7e78d
+Merge: a54a559 d194c48
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:31:15 2019 +0200
+
+    Merge pull request #176 from cyounkins/master
+    
+    Reduce wait_exponential power by 1 so first wait is equal to multiplier
+
+commit a54a5594e993197cc1fb71a086d1c50e854c7827
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:13:09 2019 +0200
+
+    Fix doc build
+
+commit e75bd50859d0cea7c42dd2bd162be52b89c18386
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:14:18 2019 +0200
+
+    Use merge method
+
+commit c8cf80156ccd0541017bc50209b3bbfa948131e8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 19 11:13:48 2019 +0200
+
+    automerge on all branches
+
+commit d194c4895f90e92b5ba3a019642135b4cf3a904d
+Author: Craig Younkins <cyounkins@gmail.com>
+Date:   Tue Jun 18 20:40:51 2019 -0400
+
+    Reduce wait_exponential power by 1 so first wait is equal to multiplier
+
+commit 9a38a0f328d0468fc341d8b06e9130f9ac320a82
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue May 28 17:45:25 2019 +0200
+
+    Set the long description type
+
+commit 354c40b7dc8e728c438668100dd020b65c84dfc6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 23 14:28:29 2019 +0200
+
+    Revert "doc: import Tenacity"
+    
+    This reverts commit 08b3956341d07370a79a170e5ee9b711fb19f32b.
+
+commit 08b3956341d07370a79a170e5ee9b711fb19f32b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 23 14:18:30 2019 +0200
+
+    doc: import Tenacity
+
+commit a9d19552974af3cd1fc762facefea2b5962a1c62
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 19 12:05:40 2019 +0200
+
+    Use setuptools_scm for packaging
+
+commit 41492ae11f5a8fb0a297ed3d3b8df0251e312f62
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 11:17:14 2019 +0200
+
+    Remove requirements.txt
+
+commit 9c841f6d400289a7da5e70ce240faaab2f920933
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 11:09:13 2019 +0200
+
+    Add missing version number
+
+commit 75d5f92a8bcb6c910860862545f34b5fe7077888
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 11:07:18 2019 +0200
+
+    Add readthedocs config
+
+commit e0c4c673e02de8d9375aabe36e25daa3fb92e7fd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 11:06:40 2019 +0200
+
+    Remove pbr and add doc extra
+
+commit 58495e566e027668fe15838d3672e47d268e810f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 11:06:18 2019 +0200
+
+    Remove outdated py34 env from list
+
+commit 42e725f48d5e6b633f9c3285dfdd72b37d881fda
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 10:56:38 2019 +0200
+
+    Disable doc on py27
+
+commit 3e87b52c396af14d94292b133047e9998516460b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 10:24:07 2019 +0200
+
+    Add API documentation
+    
+    Fixes #7
+
+commit 59d402768eaa53b98d0b4042d73fea6d2c1afb27
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 18 10:06:11 2019 +0200
+
+    Add Mergify status
+
+commit 59494fc2b351db7a6a3f5c695e5a44d31b606d49
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 9 10:10:03 2019 +0200
+
+    doc: add logging import
+    
+    Fixes #154
+
+commit 8a3b2cb2d07c82ff90c34b89b5087bf7bb92d245
+Author: Sam Park <spark@goodrx.com>
+Date:   Wed Nov 7 01:10:55 2018 -0800
+
+    Try using unshallow clone
+    
+    Per: https://docs.openstack.org/reno/latest/user/usage.html#within-travis-ci
+
+commit d71bbf82cdec81fb9ad83db352664a6b21eb1cd8
+Author: Sam Park <spark@goodrx.com>
+Date:   Fri Oct 26 21:42:25 2018 -0700
+
+    Add reno (changelog system)
+    
+    Addresses #83
+
+commit a7b83aeb487bf8de6b8f601d5b2e35f7141e8a4e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 8 11:40:27 2019 +0200
+
+    compat: fix Python 2 method compat calling
+    
+    Fixes #163
+
+commit bd3211786a0d23d4e889e6238ac99f0b253f0867
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 8 11:54:03 2019 +0200
+
+    tox: fix Python 3.7 command
+    
+    Fixes #153
+
+commit f3efd5cc82f3ea0ac75d4e28c79b2152684ea90a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 8 11:53:21 2019 +0200
+
+    Fix flake8
+
+commit 2b6ef9a2007bb5890d1c776a3bbe2922294a8739
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 8 11:53:00 2019 +0200
+
+    Fix docstring for wait_random_exponential
+
+commit e5f41f228f9e81b264128492edcb54aa2b30b63b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 8 11:36:29 2019 +0200
+
+    Fix tox.ini posargs
+
+commit 5f3d822c22ef435a57081a314bcb61b1c9f7b326
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 5 14:18:57 2018 +0100
+
+    Update Mergify to v2
+
+commit fdddfe3ba3e2713eb815ff7a420d759f88739526
+Merge: 92bb8aa b9d4dd0
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Nov 5 08:53:07 2018 +0000
+
+    Merge pull request #151 from goodspark/spark/trim-logs
+    
+    Tweak pytest - only show DeprecationWarnings once
+
+commit b9d4dd062af60e4cefa591f17ba07b66fc9e1156
+Merge: f357667 92bb8aa
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 5 09:49:16 2018 +0100
+
+    Merge branch 'master' into spark/trim-logs
+
+commit 92bb8aa99c744c2974a528773dd719885c2c3500
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 5 09:48:49 2018 +0100
+
+    pep8: ignore W503 and W504
+
+commit f3576679cf27337d97c9a68e8944ac58b103e530
+Author: Sam Park <spark@goodrx.com>
+Date:   Fri Nov 2 11:36:02 2018 -0700
+
+    Tweak pytest - only show DeprecationWarnings once
+    
+    They still need to be fixed, but if they spam too much, Travis will
+    abort the build. An Ode to Software Systems!
+    
+    Before:
+    ```
+    $ ~/c/tenacity> tox -e py27 > log.txt
+    $ ~/c/tenacity> ll log.txt
+    -rw-r--r-- 1 me me 12M Nov  2 11:37 log.txt
+    ```
+    
+    After:
+    ```
+    $ ~/c/tenacity> tox -e py27 > log.txt
+    $ ~/c/tenacity> ll log.txt
+    -rw-r--r-- 1 me me 4.5K Nov  2 11:37 log.txt
+    ```
+
+commit 39961f75a5fe3908ed76fba65094b8bcf2c4fd72
+Merge: b21083b ab21f98
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Sep 10 07:03:24 2018 +0000
+
+    Merge pull request #146 from hugovk/add-3.7
+    
+    Add support for Python 3.7
+
+commit ab21f9856b0910d9c830c5d1bda1a980d8f7ed78
+Author: Hugo <hugovk@users.noreply.github.com>
+Date:   Sun Sep 9 12:20:15 2018 +0300
+
+    Add support for Python 3.7
+
+commit b21083b4bc8b5ded86f2fb6ecbdc8727450296c4
+Merge: 5ec1e6a b618507
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Fri Sep 7 09:15:35 2018 +0000
+
+    Merge pull request #145 from bpandola/fix-documentation-error
+    
+    Fix documentation error
+
+commit b618507c79756c04e22fb89495242c80a25902f4
+Author: Brian Pandola <bpandola@hsdp.io>
+Date:   Thu Sep 6 14:58:13 2018 -0700
+
+    Fix documentation error
+
+commit 5ec1e6a897a9468feb526192a5300f65440d553d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 27 16:21:34 2018 +0200
+
+    pep8: enable flake8-logging-format
+
+commit 53d29e6dc1e96c73615d8bdf962b8d045e0477d3
+Merge: 2614cb5 e189aab
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Aug 27 11:21:36 2018 +0000
+
+    Merge pull request #144 from immerrr/add-test-for-attempt-number-in-async-coros
+    
+    Add test for attempt numbers in interleaved async coroutines
+
+commit e189aab94284f4b3b1e2c529d9f16c923937c1ff
+Author: immerrr <immerrr@gmail.com>
+Date:   Mon Aug 27 13:41:45 2018 +0300
+
+    Add test for attempt numbers in interleaved async coroutines
+
+commit 2614cb5f573a76ee37996eb67bc44ee14157adc8
+Merge: 2396381 0d401ef
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Aug 27 07:17:00 2018 +0000
+
+    Merge pull request #143 from WouldYouKindly/master
+    
+    Remove extra increments of RetryCallState.attempt_number
+
+commit 0d401efca5fe3d24346330f09bece4851a957c56
+Merge: f7501d8 2396381
+Author: Alexey <forestbiiird@gmail.com>
+Date:   Sun Aug 26 14:25:58 2018 +0300
+
+    Merge branch 'master' into master
+
+commit f7501d8170e77fac5995a11489f14cfab8431077
+Author: Alexey <forestbiiird@gmail.com>
+Date:   Wed Aug 22 22:23:06 2018 +0300
+
+    Remove extra increments of RetryCallState.attempt_number #143
+
+commit 239638163e18e56bb36991656d605232957c5e09
+Merge: 1d05520 8ed5195
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Thu Aug 23 15:13:41 2018 +0000
+
+    Merge pull request #135 from MikeWooster/mw/add-min-wait-to-exponential-backoff
+    
+    Added min to exponential backoff.
+
+commit 8ed5195241cd9b01fdde1e00b41bff53919e9ab3
+Author: MikeWooster <mikewooster87@gmail.com>
+Date:   Wed Aug 8 18:17:56 2018 +0100
+
+    Added min to exponential backoff.
+
+commit 1d05520276766d8c53fbb35b2b8368cc43a6c52c
+Merge: 4baff6e a181af8
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Aug 20 13:35:14 2018 +0000
+
+    Merge pull request #140 from immerrr/add-backward-compatibility-for-cb-classes
+    
+    stop, retry: add compatibility wrappers for __call__ methods
+
+commit a181af81d01a866935de5bb9772e88e8ec19df6c
+Author: immerrr <immerrr@gmail.com>
+Date:   Sun Aug 19 11:29:47 2018 +0300
+
+    stop, retry: add compatibility wrappers for __call__ methods
+    
+    They can be called side-stepping the "primary" backward compatibility shim
+    provided by BaseRetrying class, for example when an inherited class uses an old
+    signature in a "return super().__call__"
+
+commit 4baff6e26be044d8132262d89a78e969d0a52cea
+Merge: 3dacdd5 7b7a3e6
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Wed Jul 25 09:25:39 2018 +0000
+
+    Merge pull request #126 from immerrr/make-before-and-after-accept-retry-state
+    
+    Make before, after and stop, retry and retry_error_callback accept retry state
+
+commit 7b7a3e6068ddd7d2b2ff4a02df2e36124ac4899e
+Merge: 846d8c8 3dacdd5
+Author: mergify-bot <noreply@mergify.io>
+Date:   Wed Jul 25 11:22:43 2018 +0200
+
+    Merge branch 'master' into 'make-before-and-after-accept-retry-state'
+
+commit 846d8c84491f7f89146854a3ab001c4d90f925d0
+Author: immerrr <immerrr@gmail.com>
+Date:   Tue Jul 24 20:51:54 2018 +0200
+
+    compat: add deprecation warnings
+
+commit 3dacdd5147942f3c8c647ce2833a23b3353b1cef
+Merge: 5c05ebc 8392d3c
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Wed Jul 25 09:01:57 2018 +0000
+
+    Merge pull request #131 from dhirschfeld/patch-1
+    
+    Add some more context to the reasons for forking
+
+commit 8392d3c89c8e003ebda57c5eaad4150497da6fba
+Author: Dave Hirschfeld <dave.hirschfeld@gmail.com>
+Date:   Wed Jul 25 09:39:00 2018 +1000
+
+    Add some more context to the reasons for forking
+
+commit 0a5494307eafb6019cc5b533dce6e6ae2ffab6a9
+Author: immerrr <immerrr@gmail.com>
+Date:   Fri Jul 20 21:13:23 2018 +0200
+
+    Update docs and reorganize them a bit
+
+commit fcb44f50d246447bd486ef7d367070157d7a3b99
+Author: immerrr <immerrr@gmail.com>
+Date:   Sat Jul 14 08:24:58 2018 +0200
+
+    Make stop, retry, before, after and retry_error_callback accept retry_state
+
+commit 52e0181f347e1af8dbe765db654b23d48553c062
+Author: immerrr <immerrr@gmail.com>
+Date:   Sat Jul 14 08:24:43 2018 +0200
+
+    Move backward-compatibility-related utils to tenacity.compat
+
+commit b478a85fb8f4fb75a40d01d358c256183229585d
+Author: immerrr <immerrr@gmail.com>
+Date:   Thu Jul 12 11:55:45 2018 +0200
+
+    Rename call_state -> retry_state
+
+commit 5c05ebcb1c057496d68cf06d855c8fab7b67a779
+Merge: 80ef8d9 00fc4d7
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Jul 23 14:52:59 2018 +0000
+
+    Merge pull request #130 from immerrr/fix-wait-chain
+    
+    Fix wait_chain to be runnable multiple times
+
+commit 00fc4d744da86e4666207fd9cf67ccbf867e6c90
+Merge: 219d980 80ef8d9
+Author: mergify-bot <noreply@mergify.io>
+Date:   Mon Jul 23 16:50:44 2018 +0200
+
+    Merge branch 'master' into 'fix-wait-chain'
+
+commit 80ef8d9e9f91f6a4ecaa9268be831274ef6282ea
+Merge: ef9a0ac ad33fff
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Jul 23 14:42:51 2018 +0000
+
+    Merge pull request #129 from immerrr/fix-wraps-on-py2
+    
+    Fix six.wraps having a problem with __name__ attr on Py2
+
+commit 219d980aeebff056de485b7c1dfde3579adc0a30
+Author: immerrr <immerrr@gmail.com>
+Date:   Fri Jul 20 22:26:11 2018 +0200
+
+    Fix wait_chain to be runnable multiple times
+
+commit ad33fff0858750a845c9eed974361df951e3cb31
+Author: immerrr <immerrr@gmail.com>
+Date:   Fri Jul 20 22:02:42 2018 +0200
+
+    Fix six.wraps having a problem with __name__ attr on Py2
+
+commit ef9a0acd11b8dfa0aad579561011ad2597a6aac4
+Merge: 1fe4714 5130623
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Fri Jul 20 07:12:49 2018 +0000
+
+    Merge pull request #127 from Brian-Williams/master
+    
+    Add retry_if_exception_message
+
+commit 5130623de634305ceb960b3ec61ea33ae40a4682
+Author: Brian Williams <briancmwilliams@gmail.com>
+Date:   Thu Jul 12 15:58:52 2018 -0400
+
+    Add retry_if_exception_message and complement
+    
+    The _predicate_factory was originally wrapped.
+    
+    Wrapping made it more confusing. Easier to just have it
+    clearly be the inverted predicate.
+    
+    Considered using an anti-pattern to set a dynamic name, but in reality
+    the method that is decorated should make it obvious if it's initialized
+    with message or match.
+    
+    Add imports to init
+
+commit 1fe47143346cd24809dca783eae72cb25281cc9e
+Merge: 8b9295e 020e7a7
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Mon Jul 9 12:20:33 2018 +0000
+
+    Merge pull request #124 from immerrr/make-before-sleep-accept-call-state
+    
+    Make before_sleep accept call_state
+
+commit 020e7a7ae2cf9b46b2c7e553f18a76da6e2d012b
+Author: immerrr <immerrr@gmail.com>
+Date:   Sat Jul 7 10:50:41 2018 +0200
+
+    Add documentation for before_sleep and RetryCallState
+
+commit 841705cd571d5fa14f109245a413c09e62226ea7
+Author: immerrr <immerrr@gmail.com>
+Date:   Wed Jun 27 12:39:18 2018 +0200
+
+    before_sleep_log: handle retries on returned values, not only exceptions
+
+commit b42d97949e7a39cd337e3ae47357db66a2135079
+Author: immerrr <immerrr@gmail.com>
+Date:   Wed Jun 27 10:01:42 2018 +0200
+
+    Make before_sleep callbacks accept call_state with backward compat
+
+commit 49f3c2dedb00db2bcb2fc9b2337f24b040547ada
+Author: immerrr <immerrr@gmail.com>
+Date:   Wed Jun 27 11:48:00 2018 +0200
+
+    RetryCallState: add retry_object & next_action fields
+
+commit 9d7fa29a1cc9c80191fbdb1cc4e9e1963b6343ff
+Author: immerrr <immerrr@gmail.com>
+Date:   Wed Jun 27 10:09:21 2018 +0200
+
+    gitignore: add pytest_cache
+
+commit 8b9295ead1901f7018ca1219d87cb138259d8326
+Merge: 0002ba3 abf2329
+Author: mergify[bot] <mergify[bot]@users.noreply.github.com>
+Date:   Wed Jun 27 07:26:25 2018 +0000
+
+    Merge pull request #122 from immerrr/add-retry-call-class
+    
+    Add RetryCallState class
+
+commit abf23295ae033f41b3d1ffec9851928623b77d10
+Author: immerrr <immerrr@gmail.com>
+Date:   Wed Jun 13 18:22:53 2018 +0300
+
+    Tweak wait funcs to accept call_state with backward compat
+
+commit be8b1ac35b3886eea74b1f49d7669fff65e0eccc
+Author: immerrr <immerrr@gmail.com>
+Date:   Thu Jun 7 12:29:16 2018 +0300
+
+    Add RetryCallState class
+
+commit 0002ba33fb9658a20e2324cb36a73b24ab616807
+Author: Hamish Downer <hamish@foobacca.co.uk>
+Date:   Mon May 14 22:06:25 2018 +0100
+
+    More small documentation improvements:
+    
+    - Split the "other" section into meaningful section titles
+    - Add a section on using tenacity without the `retry` decorator
+
+commit 99468c8ef50b3f7bbdd695065f099492ff463458
+Author: Hamish Downer <hamish@foobacca.co.uk>
+Date:   Wed May 9 21:42:47 2018 +0100
+
+    Improve docs by splitting into sections
+
+commit 723ba6acfa00df769d2f14cce2ad257652ab41d9
+Author: Daniel Bennett <daniel.bennett@wpengine.com>
+Date:   Sat Apr 28 21:09:46 2018 -0500
+
+    add retry_error_callback param
+
+commit 1c0b57231269c9a4cbc7692ef0cb865ffe5197c4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 30 17:04:12 2018 +0200
+
+    Fix Mergify conf
+
+commit 1fdab3c4a4a9b7130d96b2aed1cfad998b7690d7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 28 15:09:12 2018 +0200
+
+    Enable mergify
+
+commit 3aacb41738f04852ba153d9a5ec4e21fa71b996a
+Author: Hannes Gräuler <hannes@smasi.de>
+Date:   Wed Apr 18 18:51:30 2018 +0200
+
+    Implement before_sleep logging hook
+    
+    Related to jd/tenacity#77
+
+commit 036c7e9ebe397a8127fbee37c2acc0bcb4fc7f11
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 16 14:04:49 2018 +0200
+
+    Rename tenacity.async to tenacity._asyncio
+    
+    Fixes #117
+
+commit 8030ae84381638689ca13c13a02d1132ca40e5d8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 16 14:01:22 2018 +0200
+
+    Remove useless install of nose
+
+commit 16be7b759a870b404adf2687bb9e36cc6db2a59d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 16 14:00:41 2018 +0200
+
+    Switch to pytest
+
+commit 1c4ed22935a65178f411966e461d468a13273780
+Author: Michael Elsdörfer <michael@elsdoerfer.info>
+Date:   Tue Apr 10 12:38:54 2018 +0100
+
+    Fix codeblock formatting.
+
+commit 69a8bd982420d63919a1ba3550e3eb37b1f1d006
+Author: Michael Elsdörfer <michael@elsdoerfer.info>
+Date:   Wed Mar 28 21:28:31 2018 +0100
+
+    Document how to use Trio/curio.
+
+commit 0b8e03a89db920f7418b0505ce4fe35bbd719125
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 9 16:23:19 2018 +0200
+
+    Catch BaseException rather than just Exception
+    
+    Fixes #104
+
+commit 3fe33483b77d3a639c2dc71e1929d57cc07a69a3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 9 16:19:20 2018 +0200
+
+    Fix pep8 errors
+
+commit 9d90be90bacd4efda66339a1e8d4d7f0ee7debfe
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 9 16:13:14 2018 +0200
+
+    Only install monotonic on Python 2
+    
+    Partial fix for #116
+
+commit 4b59b1ae63337187f33c313ba0ae473533077550
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 9 16:10:04 2018 +0200
+
+    Stop using pbr to build documentation
+
+commit 4bcdd9bcc79fbca38f8836c10a89765f83085239
+Author: Martin Larralde <althonos@users.noreply.github.com>
+Date:   Sun Mar 25 17:11:38 2018 +0200
+
+    Add `license` key to `setup.cfg`
+
+commit e71f5c827944406787404f96c75ea2d8fdd4600a
+Author: Jaye Doepke <jdoepke@mintel.com>
+Date:   Sun Mar 4 22:19:14 2018 -0600
+
+    Avoid inspect.getargspec deprecation warning
+    
+    `inspect.getargspec()` was deprecated in Python 3.
+    Use `inspect.getfullargspec()` in Python 3.
+
+commit 97cde0d423ce71fb4fef69a2e2958aea462acb2e
+Author: Tim Burke <tim.burke@gmail.com>
+Date:   Wed Jan 17 21:47:38 2018 -0800
+
+    Don't fall over if an old version of tornado is installed
+    
+    Related to issue #99 -- even if we don't properly support old versions
+    of tornado, we can do better than raise an AttributeError if an old
+    version *just happens* to be installed.
+
+commit 5dd4c194a3a3a96cb61638e152f7babd472c2d07
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jan 16 14:45:23 2018 +0100
+
+    Allow to specify RetryError
+    
+    Sem-Ver: feature
+
+commit 69cf4a74549b0820e6baaa188d0e72ced5ed58ad
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Fri Dec 1 12:44:43 2017 -0800
+
+    Allow waiters to introspect last result
+    
+    This will help implement the desire listed at issue #101
+    by allowing for waiter functions/classes/other to recieve
+    the last result and do smart things with it.
+
+commit 058200d40e828e292772560d01683d75d4752776
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Tue Nov 28 12:55:55 2017 -0800
+
+    Missed top level import of stop_when_event_set
+    
+    Don't make me import from stop module itself ;)
+
+commit fccbedf5b2392b3df3c9fc58c8f61033a0293326
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 17 15:41:31 2017 +0100
+
+    Mention Tornado minimum version in README
+    
+    Improves #99
+
+commit daaaebe80c58784996dbdbc63ee9e14bae333446
+Author: Brian Williams <brian.williams@actifio.com>
+Date:   Sun Nov 12 17:31:56 2017 -0500
+
+    Fix unless_exception test names and add no input test
+    
+    The retry_unless_exception_type tests were misnamed to the old function
+    name of retry_until_exception_type.
+    
+    Also added a test to explicitly test the no input functionality. This
+    use case has been exposed in #94 so shouldn't be changed.
+
+commit 290c0dce0b51236667324cea7184c2f00f22ab25
+Merge: 14fae9e 700d540
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Nov 12 14:31:05 2017 +0100
+
+    Merge pull request #96 from 31z4/add-tornado-support
+    
+    Add Tornado support
+
+commit 700d540ab0a6f9847332532e704010be5968149e
+Author: Elisey Zanko <elisey.zanko@gmail.com>
+Date:   Sun Nov 12 16:05:01 2017 +0500
+
+    Add Tornado support
+
+commit 14fae9e0dabd98595fdde7f20d0b1abcdaf4097c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Nov 9 17:18:48 2017 +0100
+
+    Fix pep8
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2fabd4ac5dfa1e0ffa25e2965e067dc9f6109ec9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Nov 9 15:39:08 2017 +0100
+
+    Simplify wrapping code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b0a30f85ffac529c5475c56f7dd48bde3b28f190
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Nov 9 14:54:34 2017 +0100
+
+    Implement `retry_with' on decorated functions
+
+commit a86237f4d0dee13d328e819d7d9bf038c8bb0a77
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 24 10:36:57 2017 +0200
+
+    Replace hacking with flake8 extensions
+
+commit 0686b4c9e659d3471ffc5aacbb76c7e114033656
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 24 10:17:32 2017 +0200
+
+    Fix import order
+
+commit 83cefa4747ace6a23174235484fa1bf5900b1af9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 24 10:13:10 2017 +0200
+
+    Put a default sleep attribute on BaseRetrying
+    
+    Fixes #92
+
+commit 5f4de7f1cbbf2295c8e8a390001a8150ec818f48
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 24 10:12:39 2017 +0200
+
+    async: allow to specify a different sleep method
+
+commit 73ff6ec7b9412e0c7dd8df339f3dcd482cbf9eb0
+Author: Victor Yap <victor@vicyap.com>
+Date:   Sat Sep 23 08:16:07 2017 -0500
+
+    Issue-8: Make sure doc examples run (#89)
+    
+    * update gitignore to ignore doc output
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+    
+    * add Makefile for docs
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+    
+    * Add requirements_dev.txt for development
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+    
+    * Fixes #8: Make sure doc examples run
+    
+    I am addressing issue #8. I added the sphinx doctest extension.
+    
+    There was one case I left out, namely the async case, because I am not sure
+    how to get doctest to run on specific python versions without using
+    `.. doctest` blocks.
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+    
+    * Remove Makefile, requirements_dev
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+    
+    * Move build_sphinx options to setup.cfg
+    
+    Signed-off-by: Victor Yap <victor@vicyap.com>
+
+commit 5e2e8c7460a77c7f558cbd578309597e75eca5a1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Sep 23 15:15:01 2017 +0200
+
+    Remove Python 3.4 support
+
+commit 9822d59b209e07865fbc82ac2adf80563b603759
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Aug 16 16:07:43 2017 +0200
+
+    Deploy tags with Travis
+    
+    Closes #81
+
+commit 319168f18ecb7d95ead91f3d7aaada23dabe1161
+Merge: bd52c57 0bcf66d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jul 26 09:45:21 2017 +0200
+
+    Merge pull request #82 from zaneb/master
+    
+    Document random exponential backoff strategy
+
+commit 0bcf66dc1885c6d5e4994031b2982d3de18ac30d
+Author: Zane Bitter <zbitter@redhat.com>
+Date:   Tue Jul 25 12:49:54 2017 -0400
+
+    Document wait_random_exponential strategy
+
+commit d5a1d8faf02ffbe27b9a85bcb93d53a9d4e7114c
+Author: Zane Bitter <zbitter@redhat.com>
+Date:   Tue Jul 25 12:19:59 2017 -0400
+
+    Rename wait_full_jitter to wait_random_exponential
+    
+    The name "full jitter" can only really be interpreted in the context of
+    a particular blog post[1] that compares it to other possible algorithms.
+    The formal name for this algorithm, which was originally developed for
+    CSMA communication systems (the first was ALOHA, but it is also used by
+    e.g. Ethernet)[2] is "truncated binary exponential backoff"[3].
+    
+    However, the term "exponential backoff" is already used to describe a
+    different algorithm in tenacity, that doesn't include jitter. These have
+    different use cases - geometrically increasing fixed delays are useful
+    for balancing retries against latency when a resource is unavailable and
+    you don't know when it will be available again; geometrically increasing
+    jitter is useful when multiple actors are in contention for the same
+    resource.
+    
+    Since the "full_jitter" algorithm is effectively a convolution of the
+    "random" and "exponential" algorithms, "random_exponential" seems like a
+    better name for it.
+    
+    The old name is still exported to avoid breaking any existing users.
+    
+    [1] https://www.awsarchitectureblog.com/2015/03/backoff.html
+    [2] http://www.cs.utexas.edu/users/lam/NRL/backoff.html
+    [3] https://en.wikipedia.org/wiki/Exponential_backoff
+
+commit bd52c579e5ac384b016d532f431487fa89ef1eb8
+Merge: fad5e64 2a75895
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jul 10 18:57:34 2017 +0200
+
+    Merge pull request #79 from Brian-Williams/retry_until_exception_type
+    
+    Retry until exception type
+
+commit 2a75895bdc84d396771d042ead09319af09e4f34
+Author: Brian-Williams <Brian-Williams@users.noreply.github.com>
+Date:   Thu Jul 6 22:30:43 2017 -0400
+
+    Add retry_unless_exception_type
+    
+    - Add a complement of retry_if_exception_type and tests.
+    - Changed docstrings since exception_types can be an individual
+      exception or a tuple of exceptions.
+    - Fixed a typo in NoNameErrorAfterCount.go.
+    - Gave NoIOErrorAfterCount and NoNameErrorAfterCount triple quoted
+      docstrings.
+
+commit fad5e64b9ca23416ab5b44d4a56fc22867abe87f
+Merge: 222c202 5385e58
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jul 7 09:31:25 2017 +0200
+
+    Merge pull request #80 from Brian-Williams/docs
+    
+    Add missing ')' to README.rst
+
+commit 5385e58b6c7a2dcda7707043d53cd581430928d0
+Author: Brian Williams <brian.williams@actifio.com>
+Date:   Fri Jul 7 00:53:22 2017 -0400
+
+    Add missing ')' to README.rst
+
+commit 222c202638fa50f95e70a3b79375df39a5c34e55
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 21 12:16:11 2017 +0200
+
+    Do not duplicate statistics fields in instance
+    
+    Statistics are thread-locals, so leverage them rather than using
+    non-thread-safe instance attributes
+    
+    Fixes #75
+
+commit f49b3059fb09ca7ee1091f8f16c9f70a015a5ca6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 21 11:45:54 2017 +0200
+
+    Do not start trial_start_time as an attribute
+    
+    This makes it thread-safer.
+
+commit 509627d724333a0a00e120b430cc87da1a45a7b6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jun 20 16:43:42 2017 +0200
+
+    Add an example on how to combine stop conditions
+    
+    Fixes #74
+
+commit dc009e7fc59195419e2e1347b3f1e5c0cca58a2a
+Merge: dd0c50a 35cdb55
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jun 16 12:02:54 2017 +0200
+
+    Merge pull request #69 from harlowja/add-event-based-stop-and-nap
+    
+    Add new event based sleep and stop
+
+commit dd0c50a540785fd67daf726eec84cfe373b26a0c
+Merge: 8253e90 8c58663
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Jun 16 12:02:01 2017 +0200
+
+    Merge pull request #70 from william-silversmith/master
+    
+    feat: added wait_full_jitter
+
+commit 8253e90a73576a7895afa7f97c617c9aea6cca34
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jun 14 23:41:46 2017 +0200
+
+    Put a link to the GitHub issue of retrying about the fork.
+    
+    Fixes #65
+
+commit 8c586639e280e64b40fdf530b3bfe45ebffdd9fb
+Author: William Silversmith <william.silversmith@gmail.com>
+Date:   Thu Jun 8 17:05:39 2017 -0400
+
+    feat: added wait_full_jitter
+    
+    Wait strategy based on the results of this Amazon Architecture Blog:
+    
+    https://www.awsarchitectureblog.com/2015/03/backoff.html
+    
+    The Full Jitter strategy attempts to prevent synchronous clusters
+    from forming in distributed systems by combining exponential backoff
+    with random jitter. This differs from other strategies as jitter isn't
+    added to the exponentially increasing sleep time, rather the time is
+    computed is uniformly random between zero and the exponential point.
+    
+    Excerpted from the above blog:
+        sleep = random_between(0, min(cap, base * 2 ** attempt))
+    
+    A competing algorithm called "Decorrelated Jitter" is competitive
+    and in some circumstances may be better. c.f. the above blog for
+    details.
+
+commit 35cdb55b427263319f6198981c229d4f7d8450bc
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Thu May 18 22:57:36 2017 -0700
+
+    Add new event based sleep and stop
+
+commit 913aff6604d75ff28576ae7793ef3d57cfd17029
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed May 3 12:26:56 2017 +0200
+
+    Add `wraps' method directly on Retrying object
+    
+    This allows to (re)use an existing Retrying object to wrap any function.
+    
+    Sem-Ver: feature
+
+commit 5052cdc3b140766563d916c4bc949e733ae5914b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 24 11:04:28 2017 +0200
+
+    wait: handle OverflowError
+
+commit 07f8dda054660281e733d2119edc30bce5ec65bc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 13 14:59:03 2017 +0200
+
+    doc: raise Exception in example so they actually work
+    
+    The examples are not clear enough that they will not retry since they do not
+    raise any exception. This adds a raise statement so if anybody try them it will
+    see what tenacity actually does.
+    
+    Fixes #57
+
+commit 9f9311bec5ed7c2fa1c3c99f8b2bb7e0e11e03b3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 13 14:58:33 2017 +0200
+
+    Remove weird example with retry_if_io_error
+
+commit e916e65f636fd7289c6244aca63f0cf5ab2b041b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 24 14:37:54 2017 +0100
+
+    Bump version for new feature
+    
+    Commit dc9ed513eb0ffcfba5b1bc5b9f7388703c1570ec introduced a new feature.
+    
+    Sem-Ver: feature
+
+commit 3dce1815ed42dd44cd4db856c3515b0a0d9f56eb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 24 13:45:25 2017 +0100
+
+    Add Python 3.6 support
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dc9ed513eb0ffcfba5b1bc5b9f7388703c1570ec
+Author: Michael Evans <michael.evans@mwrinfosecurity.com>
+Date:   Fri Mar 24 13:37:27 2017 +0200
+
+    Add retry_if_not_result class to compliment the existing retry_if_result class
+
+commit f2e0fa73a26e4c4331eeeb145d576bfa0f5b1637
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 24 10:02:50 2017 +0100
+
+    Fix six minimum version
+    
+    Fixes #54
+
+commit bc49bd09a70d7edfcd0fcf72747e988b59a51714
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Mar 21 10:43:13 2017 +0100
+
+    doc: rewrite the before explanation
+    
+    Fixes #53
+
+commit 4101b5ed9560f3053a1e540cda92c635f15714da
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Mar 6 17:45:02 2017 +0100
+
+    Add __call__ on BaseRetrying class
+    
+    This is not a with statement, but it's as easy as shown in #48.
+
+commit 9fb57d4cd7f2dbc0e88d3af05824929eb36e9a78
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 3 11:41:41 2017 +0100
+
+    Document before and after keywords
+    
+    Fixes #51
+
+commit 651d980c9930b6e1dc135c3aa3b4761ea5252e3b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 3 09:51:04 2017 +0100
+
+    Remove useless MANIFEST
+
+commit 2ecd22f5305ab1f97f480a30bf46016d5c1aafae
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Feb 25 22:29:11 2017 +0100
+
+    Remove non-working PyPI download image
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8c9525378289d2aed3826cb5ab3014d81839c9e7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jan 10 16:18:20 2017 +0100
+
+    Bump hacking to 0.13
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5b111272f6e8af19b9437f50a7f2b8e587511883
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jan 10 16:16:53 2017 +0100
+
+    Use Python 3 for pep8 tox target
+
+commit 206e8ede4b2d2de297b905b25b0cc010ab8b9081
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jan 10 16:15:57 2017 +0100
+
+    Remove deprecated wait_jitter
+    
+    Fixes #46
+    
+    Sem-Ver: api-break
+
+commit 76cec8a3ec4c69efbeaebb04927c928f2af5a314
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jan 4 16:40:26 2017 +0100
+
+    Fix pep8 errors
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9e8d7792eb9499cf0c02efe7030c75190e5cae7d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Jan 4 16:23:25 2017 +0100
+
+    Correctly set the exception if we TryAgain for ever
+    
+    Fixes #45
+
+commit c3b02ab8aa532f0b1c8d1bda94856114dc45c223
+Merge: e9e7294 d408c40
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Dec 13 15:49:01 2016 +0100
+
+    Merge pull request #37 from bersace/async
+    
+    Retry coroutines
+
+commit d408c40b505bce4b0d9e30ae74378edc594255bb
+Author: Étienne BERSAC (bersace) <etienne.bersac@people-doc.com>
+Date:   Tue Dec 13 11:21:43 2016 +0100
+
+    Retry on coroutines
+
+commit e9e72941f36a45836ebd42f8891e95d20d785302
+Merge: 8a233bf c95baa3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Dec 13 14:36:21 2016 +0100
+
+    Merge pull request #43 from bersace/pep8
+    
+    Run flake8 only with latest python
+
+commit c95baa3dc409751d34bcc580f4bbff6605778eca
+Author: Étienne BERSAC (bersace) <etienne.bersac@people-doc.com>
+Date:   Tue Dec 13 11:21:43 2016 +0100
+
+    Run flake8 only with latest python
+
+commit 8a233bfec3f0d85b44b87cd79b097f77f8e76a4e
+Merge: 7952f8e fea726a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Dec 13 10:29:51 2016 +0100
+
+    Merge pull request #42 from bersace/decorator
+    
+    Deduplicate retry decorator logic
+
+commit fea726ace40edbf770c98de824f2f1ba1b0ee385
+Author: Étienne BERSAC (bersace) <etienne.bersac@people-doc.com>
+Date:   Tue Dec 13 10:00:07 2016 +0100
+
+    Deduplicate retry decorator logic
+
+commit 7952f8e1d3504ec80dc1912ec9c273129d53982e
+Merge: 8f96a9f 3f40fcf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Dec 12 21:54:45 2016 +0100
+
+    Merge pull request #40 from bersace/marshaller
+    
+    Split marshall of retries from IOs
+
+commit 3f40fcf0ecd92184c913b15981fb273bdc90ed03
+Author: Étienne BERSAC (bersace) <etienne.bersac@people-doc.com>
+Date:   Thu Dec 1 12:12:08 2016 +0100
+
+    Extract controller IOs in subclass
+
+commit 8f96a9ff383e0521723c131fd908551b55b5ed4d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Dec 1 12:25:11 2016 +0100
+
+    Allow to combine stop conditions
+
+commit 16796e471fb35ca2753435a3365065791cc4fea6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 25 17:46:36 2016 +0100
+
+    Add SayThanks
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5eff3d4dbf84e2c5e0532e0149f97aefe259181f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 25 17:40:12 2016 +0100
+
+    retry: implement bitwise operators on retry strategies
+
+commit 26ed5e05219b31e5d66b3d25f0180ffb52fbb5c6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 25 17:32:45 2016 +0100
+
+    retry: add retry_all
+
+commit d0b4f9538c094d82c8dbd1111a9c4d855962c26a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 25 17:03:30 2016 +0100
+
+    Deprecate wait_jitter for wait_random
+
+commit 2e483a72e76c416726fd4f97b53d42104c6b1822
+Merge: 950b931 d77dc95
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Nov 24 12:13:47 2016 +0100
+
+    Merge pull request #38 from bersace/tox
+    
+    Align tox and travis settings
+
+commit d77dc9504541e99cd9e10242ce74c8836ade1377
+Author: Étienne BERSAC (bersace) <etienne.bersac@people-doc.com>
+Date:   Thu Nov 24 11:44:51 2016 +0100
+
+    Align tox and travis settings
+
+commit 950b931bb59a881096cd61a025fa40987ad9018c
+Merge: 4541190 6df4068
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Nov 16 14:10:16 2016 +0100
+
+    Merge pull request #36 from sileht/master
+    
+    Fix README typo
+
+commit 6df406806edaa4f1f96e35332c4721f8cd12e585
+Author: Mehdi Abaakouk <sileht@sileht.net>
+Date:   Wed Nov 16 12:30:59 2016 +0100
+
+    Fix README typo
+
+commit 45411905dbcd1b3a34cf57ff6699028990ce8370
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 7 22:46:33 2016 +0100
+
+    Bump hacking to 0.12
+
+commit d78b8f35c417637a048e9219602e01770c17a756
+Merge: abf9448 9fb0ed7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Oct 27 19:43:22 2016 +0200
+
+    Merge pull request #34 from harlowja/floating
+    
+    This is using floating point seconds (not milliseconds)
+
+commit abf94483502de69189632671651cfc7f48c9a9c6
+Merge: d9c284d 5a6d9a8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Oct 27 19:42:42 2016 +0200
+
+    Merge pull request #35 from harlowja/fix-readme
+    
+    Fix README.rst wrong description
+
+commit 5a6d9a80ec090d95b4af088ad623dd6cc9f99ec8
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Thu Oct 27 12:25:31 2016 +0200
+
+    Fix README.rst wrong description
+    
+    This shouldn't be describing exponential
+    backoff when its applying a fixed wait with
+    jitter (so fix the description to talk about
+    the right things).
+
+commit 9fb0ed78532b6b0d313119ed8f0ab0434e02b55e
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Thu Oct 27 12:08:21 2016 +0200
+
+    This is using floating point seconds (not milliseconds)
+
+commit d9c284d26dff1a210d978bcd9843bae2e9635038
+Merge: 4f9e495 a844483
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 26 18:02:19 2016 +0200
+
+    Merge pull request #33 from harlowja/docstring-tweaks
+    
+    Some small docstring updates
+
+commit 4f9e4951dad1bf72cb376af411a9e1887199d03d
+Merge: 144125b 6309376
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 26 14:12:00 2016 +0200
+
+    Merge pull request #32 from harlowja/py3-print
+    
+    Use py3.x compat print in README.rst
+
+commit a844483c161229d20a75e2643cef26b2a7bd7476
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Wed Oct 26 14:09:54 2016 +0200
+
+    Some small docstring updates
+
+commit 630937636dce85d6a9feff71dd8ebb9eae29eee0
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Wed Oct 26 13:59:10 2016 +0200
+
+    Use py3.x compat print in README.rst
+
+commit 144125b92b17acf86ce27763d502fe84c66d4d22
+Merge: 879590e ed46728
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 25 16:15:16 2016 +0200
+
+    Merge pull request #31 from gdavoian/master
+    
+    Fix typo in retry_if_exception example
+
+commit ed467284de046bfca88d5070eb6f165c0ba6a545
+Author: Gevorg Davoian <gdavoian@mirantis.com>
+Date:   Tue Oct 25 00:55:34 2016 +0300
+
+    Fix typo in retry_if_exception example
+
+commit 879590e590f8e57f6678cab38f7ed7d7f538e9bc
+Merge: 2c7ab55 9a1b4b7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Oct 22 18:58:11 2016 +0200
+
+    Merge pull request #30 from gdavoian/master
+    
+    Implement '+' operator for wait strategies
+
+commit 9a1b4b7459f9862249ab7f47bed7b104c35e6adc
+Author: Gevorg Davoian <gdavoian@mirantis.com>
+Date:   Sat Oct 22 16:51:17 2016 +0300
+
+    Implement '+' operator for wait strategies
+
+commit 2c7ab553d287ae4ce3ec8c684c86543ff2e277fe
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 4 18:03:26 2016 +0200
+
+    Initialize statistics at runtime
+    
+    Doing the initialization at __init__ time only does it for the current thread,
+    obviously.
+
+commit 510cd9f67192982d97a5ff8a5bc09d0d5edd72a1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 4 09:02:41 2016 +0200
+
+    Rename `_retrying` attribute to `retry` and document it
+
+commit 4ecc24dab58078c8c110eed902fbd53066ead79f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 3 13:32:58 2016 +0200
+
+    Store retrying object as an attribute of retried function
+    
+    That allows to access statistics easily.
+
+commit 4294e97d537870ddf0a73ea95e638b36bb6f5f01
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 3 13:32:44 2016 +0200
+
+    Make sure statistics are thread locals
+
+commit 998382181bb3ee81a583d5caf5f1ca5b1aa3fb3b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 3 13:30:17 2016 +0200
+
+    Remove NOTICE file
+
+commit 3ca87fab537246ed3e5085c74ae9a4f7cf851e3c
+Merge: bed8817 2318710
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 23 13:02:09 2016 +0200
+
+    Merge pull request #28 from bodenr/master
+    
+    Fix reraise when no exception
+
+commit 2318710e4713e2bb967f7bdb4b1c692eb4af61fb
+Author: Boden R <bodenvmw@gmail.com>
+Date:   Thu Sep 22 14:13:19 2016 -0600
+
+    Fix reraise when no exception
+    
+    https://github.com/jd/tenacity/pull/27 introduced a bug
+    whereupon if a retry callable doesn't raise and Retrying has
+    its self.reraise set to True, a TypeError will be raised because
+    we try to raise something that's not an exception class.
+    
+    This fixes that issue and adds a UT for it.
+    
+    [1] https://github.com/jd/tenacity/pull/27
+
+commit bed881719af36d5db13ba58963cf908c80ed303f
+Merge: 3956599 f6535ce
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 16 12:36:04 2016 +0200
+
+    Merge pull request #27 from bodenr/master
+    
+    Add support for reraise
+
+commit f6535ce0aa5b1303bcff0e5c4ba5ee52dc2c205c
+Author: Boden R <bodenvmw@gmail.com>
+Date:   Thu Sep 15 14:07:52 2016 -0600
+
+    Add support for reraise
+
+commit 395659933fb4eadd1825ab27a1139bcb0311535b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Sep 13 11:51:25 2016 +0200
+
+    doc: fix text legend for retry_if_result
+    
+    Fixes #23
+
+commit ec366904b8c4b4e04b763c6ee0f6a28c0609a2e9
+Merge: 5a66d38 ee00856
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 29 09:47:17 2016 +0200
+
+    Merge pull request #21 from harlowja/useful-repr
+    
+    Add a useful __repr__
+
+commit ee008560554ec4bf458d60aee981b844d8815d50
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Sun Aug 28 18:50:53 2016 -0700
+
+    Add a useful __repr__
+
+commit 5a66d389ac3c90c80c8bc9ad7694b810c392d39b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 26 10:08:56 2016 +0200
+
+    wait: fix wait_random to return floating point numbers
+    
+    Otherwise it only wait on integer values.
+
+commit 03fb0a9adbab5706559ec86c8a14a6fae2bb4d52
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 26 10:01:49 2016 +0200
+
+    Remove milliseconds usage in modules
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7d6a9c4203c2990adf698d9e364147b8fd4b6427
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 26 09:54:35 2016 +0200
+
+    Stop using millisecond values for callbacks
+
+commit 78494c4a88ae37665c345300fcfc5544f5fb850b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 26 09:52:43 2016 +0200
+
+    Add pbr generated files to ignore list
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b04134a8148c3eb2bb6757c1a2a66d7009441ad2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 25 17:37:24 2016 +0200
+
+    Use seconds everywhere instead of miliseconds
+    
+    Fixes #17
+
+commit 51a701764b0010bd11be457f19793055ea6edbe3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 25 17:33:15 2016 +0200
+
+    Fix retry_if_exception_type usage in doc
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ca318ba10b21d36325ee179509b7292c6ab45c84
+Merge: d2bb605 2aa46b3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 22 22:19:47 2016 +0200
+
+    Merge pull request #18 from harlowja/nice-ordinal
+    
+    Add and use a nice ordinal func when logging before/after
+
+commit d2bb605f5e9adf094e3d5736813781c71a6b92c7
+Merge: de94b6a fe16371
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 22 22:19:17 2016 +0200
+
+    Merge pull request #13 from bodenr/master
+    
+    Add  wait_chain()
+
+commit 2aa46b3ab5c36d377fdf7108fbdf2bc882c9bd74
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Sat Aug 20 21:19:52 2016 -0700
+
+    Add and use a nice ordinal func when logging before/after
+
+commit de94b6a89a04a975529e97179c6420bd0ce4baea
+Merge: ba53576 5c30f37
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Aug 20 22:59:53 2016 +0200
+
+    Merge pull request #15 from harlowja/before-after
+    
+    Add before/after strategies
+
+commit 5c30f37ca3c8f061f6a54fcad7d96671b11b807c
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Fri Aug 19 21:24:33 2016 -0700
+
+    Add before/after strategies
+    
+    Make these before and after functions more official
+    by providing some basic ones and a no-op ones that
+    will be used by default.
+
+commit fe16371add197d5e3f655f8f90604271caab721a
+Author: Boden R <bodenvmw@gmail.com>
+Date:   Thu Aug 18 14:51:28 2016 -0600
+
+    Add wait_chain()
+    
+    One PR I had in retrying [1] proposed to support the notion of
+    "stepped wait". This patch adds stepping support by introducing
+    a new wait_chain function that accepts one or more strategies
+    and chains their execution sequentially such that each strategy
+    is run once per attempt and then removed from the chain.
+
+commit ba53576ab2dd3f5dcd21a20c4d656fc4f5c63d21
+Merge: 9ea6df0 5b8e618
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Aug 20 10:41:06 2016 +0200
+
+    Merge pull request #14 from harlowja/comment-adjust
+    
+    Fix comment stating rejection
+
+commit 9ea6df04d68e12b2dd59eef05c80f186a03e4d61
+Merge: 5b4fc5f 5efb378
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Aug 20 10:37:43 2016 +0200
+
+    Merge pull request #16 from harlowja/stats
+    
+    Add basic stats
+
+commit 5efb3780c14aee1ae83618901fa3f6d736b7e664
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Fri Aug 19 22:49:58 2016 -0700
+
+    Add basic stats
+    
+    Fixes issue #6
+
+commit 5b8e6183d0d500d61a3085d24521a38fb13c96d5
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Fri Aug 19 21:03:10 2016 -0700
+
+    Fix comment stating rejection
+
+commit 5b4fc5f0ee37a4e8c831c2c8c36025651881d275
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 16:56:19 2016 +0200
+
+    Rename reject to retry
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f082fba6152b623cb1345b27fdfbe77c6e558844
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 10:21:31 2016 +0200
+
+    Enable pep8 checks on Travis
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b0ee6fb4b625dc531322e34c675c401dc8358e30
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 10:19:56 2016 +0200
+
+    Remove Python 2.6 support
+
+commit 00fe1f1cd026a3b2a8c641c12552bf5cfe945990
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 10:07:23 2016 +0200
+
+    Fix pep8 errors
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6759b3ca36b31f8d46ad1f7a1080ebd2b42f1b08
+Merge: 3059c46 74ba03f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 09:52:56 2016 +0200
+
+    Merge pull request #12 from harlowja/folders-are-good
+    
+    Folders are good
+
+commit 3059c468e0e464d36096df238c5a904586003119
+Merge: 80fe958 ab1bcea
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 18 09:50:55 2016 +0200
+
+    Merge pull request #10 from harlowja/less-python
+    
+    Remove dead versions of py 3.x
+
+commit 74ba03f34d3531d90705e1d6bdf248a0fe1c8cc3
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Wed Aug 17 22:25:31 2016 -0700
+
+    Move to a folder structure
+    
+    We are really starting to push the boundaries
+    of what I want in a single file, and python has
+    modules so we might as well use them to organize
+    or code better (vs not).
+
+commit ab1bceab37f07d92875db38576d3b9545e2d48e3
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Wed Aug 17 08:52:58 2016 -0700
+
+    Remove dead versions of py 3.x
+    
+    The less pytho versions we have to
+    try to think about supporting (and
+    dealing with there edge-cases) the
+    better.
+    
+    Fixes issue #4
+
+commit 80fe9586e76eae6f57a46a6e5304c79cd8b99dd1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Aug 17 10:34:35 2016 +0200
+
+    Allow to raise TryAgain to force a retry at any time
+    
+    Fixes #5
+
+commit a5ee033ba449a75abf0d2afdd67de19ad6bdc58b
+Merge: b4d7732 3e9c640
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Aug 16 10:18:12 2016 +0200
+
+    Merge pull request #2 from harlowja/use-mono
+    
+    Use monotonic time
+
+commit 3e9c6402c1dd19f14c9d5117d1c6af80986281f4
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Sun Aug 14 22:43:50 2016 -0700
+
+    Use monotonic time
+    
+    Monotonic time has the nice benefit of never
+    going backwards or getting messed up by NTPd
+    so use it instead of time.time for computing
+    durations (its a built-in on py3.x so we might
+    as well).
+
+commit b4d7732e86dbd6a9ddf73c3363de156218e66bf4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:27:54 2016 +0200
+
+    Fix doc with retry_if_exception_type
+
+commit 0499e91bf5a8488293f6d8064bce72a70f03de0e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:27:00 2016 +0200
+
+    Add retry_if_exception(predicate)
+
+commit bdc5f6a34fba8585be5dd48e04d969db2e448f3b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:22:59 2016 +0200
+
+    Rename retry_if_exceptino to retry_if_exception_type
+
+commit e568d469bce35b23ecd3c7a336b27434eaf65344
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:12:51 2016 +0200
+
+    Remove dead code
+
+commit fe25dbfdee37227aeebc5b7dfcb9902725a1ab7c
+Merge: 1f9aa66 6ff10c2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:11:49 2016 +0200
+
+    Merge pull request #3 from harlowja/use-futs
+    
+    Use futures
+
+commit 1f9aa665175e31918cfc31a52b49c6a1a41cb747
+Merge: 48194e2 e7d2105
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 15 09:09:04 2016 +0200
+
+    Merge pull request #1 from harlowja/docstrings
+    
+    Add docstring on wait_jitter
+
+commit 6ff10c2c4b82a83e4cae3b2112f80431c1275a79
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Sun Aug 14 23:11:52 2016 -0700
+
+    Use futures
+    
+    The futures class is pretty much equivalent to the
+    attempt class here, so instead of using our ow
+    customized version of it, we might as well just use
+    it in the first place.
+
+commit e7d21053e9c05dc852de52098aea02323cfd37b9
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Sun Aug 14 22:37:35 2016 -0700
+
+    Add docstring on wait_jitter
+
+commit 48194e2c9ce60948464a65fa47066eb922b57dcd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 18:35:11 2016 +0200
+
+    Allow to specify exp_base
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 06660bcd97fc36644d3d9525576d56b2f7cd0cc5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 16:22:39 2016 +0200
+
+    Simplify wait min/max computing
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 1937f7d01aa786704db1ae76820d292e4d57a0b2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 16:21:02 2016 +0200
+
+    test: add test for RetryError.__str__
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5cb0e4f61c055f818681d468f6a2023b6146dccc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 16:00:02 2016 +0200
+
+    Always wrap exceptions
+    
+    But uses raise from.
+
+commit f1055c4d01339d5caecf59fdbec642d685e8d2cd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 15:47:27 2016 +0200
+
+    Add project name in doc
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a09d31b3da8e3a33d21e055ca522a44a5c355985
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 15:41:54 2016 +0200
+
+    Add .tox to .gitignore
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 659e78279c4b067219723121a2620b69ede2d360
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 15:41:30 2016 +0200
+
+    Add doc
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 85a4a1a36301a48c457a1549723dbe5698bf818b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 15:30:19 2016 +0200
+
+    Remove retry select strategy, use a functional composition approach
+
+commit 6eddc7ae4381e41b29b11351577dfdbad0afdae3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 14:43:50 2016 +0200
+
+    test: replace assertTrue by assertGreaterEqual
+
+commit b307f4e2cc447d2624ec7af07620eea6d1ab95fc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:47:42 2016 +0200
+
+    Make stop have a default value
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a03c29f03952dd9e513c8ce0b9cd7365984d5718
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:45:28 2016 +0200
+
+    Make README doc8 compliant
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9d725dbb1ba07a680941f99b50896f50884e6ba0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:44:01 2016 +0200
+
+    Allow to specify sleep function
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a3e984e41a9f5bbdae1c8e727474bc790c374525
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:42:43 2016 +0200
+
+    Implement wait strategy combination to replace jitter argument
+
+commit 0ba1f7f0b9b280f76fd12c903e805b8107dac56b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:40:53 2016 +0200
+
+    Fix typo in README
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 77e1606933b88a3358bfe50e01dd7d54e0195fc5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:14:02 2016 +0200
+
+    Simplify wait strategy picking by forcing a func in kwargs
+
+commit 3b590b8879158e6708229b3587fd68a077cf07cc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 11:13:00 2016 +0200
+
+    Fix stop examples in README
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 43a75cf20fc4342d1a27fda50d3ffb50155678c3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Aug 12 10:07:56 2016 +0200
+
+    Simplify stop strategy picking by always requiring a function
+
+commit 0195bed3c7596969cc54b689626586cc97f8c907
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:41:08 2016 +0200
+
+    Add some copyrights
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6c1392fa101f76930ee85a8379146dbf05e6083d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:40:15 2016 +0200
+
+    Depends on nose in tox
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ccd50ec1a3d4e8336b80406b5e4ddbd1a14a9569
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:39:28 2016 +0200
+
+    Move some methods to staticmethods
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2092a48ce60bde5c19d73b8a0269f33df8755300
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:21:47 2016 +0200
+
+    Fix tox command
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 70d15b35c592a3aaba11dacd11bf478ca42b9b1c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:21:27 2016 +0200
+
+    Fix pep8 errors
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b99a20422219b8b1db7338e453d038b02e75cdd5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 18:08:09 2016 +0200
+
+    Add tox.ini
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0ec10faab77921cc50ca2f9562e6c422cdc22826
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 15:36:32 2016 +0200
+
+    Switch to pbr
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d5aa9a30e5aad3eaa08e0fc0e8feec0e6811668b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 15:31:06 2016 +0200
+
+    Rename to tenacity
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 88c61fde90115ea6e8d4aae25825b6da8b246dd2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 15:29:00 2016 +0200
+
+    Update README
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a20f3c1437942e834308a69978027ac33f878bd1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 15:28:53 2016 +0200
+
+    Remove AUTHORS
+
+commit 9d1358242cd0eb908361c50d9c1ac7c44055dcfa
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Aug 11 15:24:23 2016 +0200
+
+    Remove HISTORY.rst
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cb499287a779b711aa5c9be7a281c947d9ea98ee
+Author: Joshua Harlow <harlowja@gmail.com>
+Date:   Mon Jun 13 23:03:29 2016 -0700
+
+    Declutter __init__ by using strategy selection
+    
+    Instead of having there be a complicated __init__
+    function that has to make a bunch of complicated
+    decisions this change moves the logic for making
+    those decisions into a set of helper functions that
+    now select the various wait/stop/reject strategies
+    to use when retrying.
+    
+    This will hopefully make it easier to add new
+    strategies as well as move forward to a path where
+    users can provide there own strategies (if they
+    so want to).
+
+commit 4240fc6966babc973a3c6b8482925b5cca44d99f
+Author: Joshua Harlow <jxharlow@godaddy.com>
+Date:   Fri Jun 10 17:43:31 2016 -0700
+
+    Dynamically compute MAX_WAIT
+
+commit 1d5699348d707e377aad7488da6a8a1b48a65933
+Merge: 3a435e8 deaa384
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Jun 6 23:02:12 2016 -0500
+
+    Merge pull request #52 from RyPeck/python-3.5
+    
+    Add Python 3.5
+
+commit 3a435e8ba85d85d7300a3609cb6f3ba8cb4bc170
+Merge: 855db16 919d6e0
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Jun 6 22:45:05 2016 -0500
+
+    Merge pull request #37 from harlowja/allow-retry-on-exception-exception-tuple
+    
+    Allow providing exception tuple for 'retry_on_exception' argument
+
+commit 855db168d38493a1607066b127a6c93d4920371a
+Merge: 37b3222 6311fd3
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Jun 5 22:21:29 2016 -0500
+
+    Merge pull request #40 from cyrusd/master
+    
+    Callbacks for before/after attempts
+
+commit deaa38460aa802552d8bbb641e6171f60b258125
+Author: Ryan Peck <ryan@rypeck.com>
+Date:   Sun Jun 5 17:15:13 2016 -0400
+
+    Add Python 3.5
+
+commit 37b322221cd5e92221672c3b919c52e00dfd95b4
+Merge: ecef4c2 2a84101
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Jun 5 15:34:38 2016 -0500
+
+    Merge pull request #38 from harlowja/incrementing-wait-max
+    
+    Add a upper bound on incrementing wait
+
+commit ecef4c2d95140a62b41664d3381ecd79fe4244db
+Merge: da33537 918fc72
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Jun 5 15:32:56 2016 -0500
+
+    Merge pull request #36 from jd/jd/staticmethod
+    
+    Declare a few methods static
+
+commit 6311fd38973cb824c57c3cd74b4e44ab1f09d15e
+Author: Cyrus Durgin <cyrus@statelessnetworks.com>
+Date:   Fri Dec 18 12:49:38 2015 -0800
+
+    updated
+
+commit 6a55573d588e4a817986c8964d97dceb8c46585a
+Author: cyrus durgin <cyrusd@gmail.com>
+Date:   Thu Sep 10 15:57:35 2015 -0700
+
+    Adds two additional parameters to the Retrying() constructor:
+    
+        _before_attempts
+        _after_attempts
+    
+    Each of these should be a reference to a function that takes a
+    single argument, attempt_number.
+    
+    _before_attempts will be called before each attempt is run;
+    _after_attempts is run after any *unsuccessful* attempt.
+    
+    Handy for logging status messages, etc in between attempts.
+
+commit 2a84101c9a84e3006624ba14d7779c99fb0ef354
+Author: Joshua Harlow <harlowja@yahoo-inc.com>
+Date:   Tue Jun 23 18:22:53 2015 -0700
+
+    Add a upper bound on incrementing wait
+
+commit 919d6e0011f2c725e0bf613d8b5fcf7e48b41cce
+Author: Joshua Harlow <harlowja@yahoo-inc.com>
+Date:   Tue Jun 23 18:15:41 2015 -0700
+
+    Allow providing exception tuple for 'retry_on_exception' argument
+    
+    It seems like a common pattern to have a function that is used
+    that just checks if the exception that is thrown is of a given type
+    so to avoid duplicating this pattern by all retry library users
+    just natively provide support for it.
+
+commit da33537e0850f997aea75c4dec010e2b5594071f
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Jun 7 00:06:24 2015 -0500
+
+    bump version up to 1.3.4-dev, align badges in README.rst with a service that still works
+
+commit 918fc72fc199cace94581979dfc3afc3e38bfa66
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jun 1 17:38:25 2015 +0200
+
+    Declare a few methods static
+    
+    A few methods are actually static, declare them as such.
+
+commit 3659c70b1f0d0e4f3a262d6b76075a8eb082c73d
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Dec 14 19:07:01 2014 -0600
+
+    prepare for 1.3.3 release
+
+commit 650688df3cc6a2236830831e8201ba959c51269c
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Dec 14 19:06:27 2014 -0600
+
+    update history for 1.3.3 release
+
+commit c3b2d302cd90231a5a48bec21acc0358a752e2c7
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Dec 14 19:05:54 2014 -0600
+
+    add a few more contributors
+
+commit 5cb2c24f3065cf1bfaa4943959e28ea0dad5b184
+Merge: 2cd062e 0a3eb6e
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Dec 14 18:42:26 2014 -0600
+
+    Merge pull request #27 from herriojr/master
+    
+    Adding in minimum version since anything lower doesn't work.
+
+commit 0a3eb6eae1a1a15978d02eec74d5215e5c3a259d
+Author: Jonathan Herriott <jherriott@bitcasa.com>
+Date:   Wed Nov 19 11:29:31 2014 -0800
+
+    Adding in minimum version since anything lower doesn't work.
+
+commit 2cd062edcb522b37c49e5b693e69d5fa8d6d2437
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 22:26:41 2014 -0600
+
+    prepare for 1.3.2 release
+
+commit 7dea034d806f54d14e6cded57bc50575c138291c
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 22:26:15 2014 -0600
+
+    remove six license boilerplate since we're not embedding it anymore
+
+commit 394ea5b4921ae8ef90d3a38ed4605e285b87610c
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 22:22:33 2014 -0600
+
+    update HISTORY.rst for 1.3.2
+
+commit 7a50d88ad1201f069f2aebf80d3b22b8ef749e43
+Merge: 6fa2005 01a2173
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Nov 9 21:13:02 2014 -0600
+
+    Merge pull request #23 from harlowja/jitter
+    
+    Allow a jitter value to be passed in
+
+commit 6fa200573f667d8ff050b23a0076de42112d7e1b
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 20:52:22 2014 -0600
+
+    adding Maxym Shalenyi to AUTHORS.rst
+
+commit 8fd859896a2e7181515f8f5a924085dcf3613d00
+Merge: ad35b7e ee2ae2a
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Sun Nov 9 20:43:07 2014 -0600
+
+    Merge pull request #21 from harlowja/wraps
+    
+    Ensure we wrap the decorated functions
+
+commit ad35b7e2401574d0e49bce04712f73ad03750a15
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 20:24:34 2014 -0600
+
+    fix up some some pep8 stuff
+
+commit d51fd58129df84615dbb28ed2377301e0fc9fc60
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Nov 9 20:12:49 2014 -0600
+
+    bump version up to 1.3.2-dev
+
+commit 01a217353220f48167575724a77fa7c4bd527bd4
+Author: Joshua Harlow <harlowja@yahoo-inc.com>
+Date:   Wed Oct 29 19:21:13 2014 -0700
+
+    Allow a jitter value to be passed in
+    
+    To avoid the thundering herd problem when retrying is
+    triggered at exactly the same moment by many entities
+    allow for passing in a jitter maximum value which will
+    be used to randomly alter the amount of time slept
+    by each retrying object user; this helps randomize the
+    thundering herd and makes it possible to reduce the
+    issue.
+
+commit ee2ae2a9d309132ad7ad2a354f4e3926377634d9
+Author: Joshua Harlow <harlowja@yahoo-inc.com>
+Date:   Fri Oct 3 20:02:20 2014 -0700
+
+    Ensure we wrap the decorated functions
+    
+    To avoid losing the original functions docs, name
+    and other attributes ensure that this correctly uses
+    six.wraps (which uses functools.wraps internally) to
+    wrap the decorated function.
+
+commit cab083eb5791615fadbc0c98ad77a70d64b77d0d
+Merge: 36a09fa 445633f
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Wed Oct 1 00:49:02 2014 -0400
+
+    Merge pull request #19 from emonty/master
+    
+    Add requirements.txt to MANFEST.in
+
+commit 445633f9221ff6efdbdb7822ff7ab01952396829
+Author: Monty Taylor <mordred@inaugust.com>
+Date:   Tue Sep 30 19:42:32 2014 -0700
+
+    Add requirements.txt to MANFEST.in
+    
+    Without this, pip installs of retrying all fail due to requirements.txt
+    being missing in the tarball but required by setup.py.
+
+commit 36a09fa4dadb67b81359078c61f418a971f57372
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Sep 30 19:50:23 2014 -0500
+
+    prepare for 1.3.0 release
+
+commit 3fe643afa78b5e42aa0cdb96c1ec3df638b2be1e
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Sep 30 19:48:39 2014 -0500
+
+    update AUTHORS.rst to add contributors
+
+commit 8993298992a48d20452cc5b414b11bfb1b4b0dd2
+Merge: 30b068f 062c5ba
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Tue Sep 30 20:43:58 2014 -0400
+
+    Merge pull request #16 from hguemar/master
+    
+    Replaced bundled code with using six
+
+commit 062c5ba16b414770969871b3494f582402476985
+Author: Haïkel Guémar <hguemar@fedoraproject.org>
+Date:   Fri Sep 5 14:36:25 2014 +0200
+
+    Replaced bundled code with using six
+
+commit 30b068f26af13236e8b50f18feeb237023ab43b1
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Aug 25 19:46:15 2014 -0500
+
+    update AUTHORS.rst
+
+commit dcc355bc4ed977cafe9244bcbbe1b080799f3abb
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Aug 25 19:44:05 2014 -0500
+
+    bump version up to 1.2.4-dev
+
+commit fc88833dd769260ef4382914b9922da8980ee6c0
+Merge: ce99e6c d59d446
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Aug 25 19:38:17 2014 -0500
+
+    Merge tag 'v1.2.3'
+    
+    Release 1.2.3
+
+commit ce99e6ccd29e604bf0549d3de5cc495300e290d7
+Merge: 709c177 6504edc
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Aug 25 19:20:16 2014 -0500
+
+    Merge pull request #15 from svisser/patch-1
+    
+    Ensure file handles are closed using with statement
+
+commit 6504edc5966e597dca703d3a02b1d3f878f5bc9c
+Author: Simeon Visser <svisser@users.noreply.github.com>
+Date:   Tue Aug 26 01:09:37 2014 +0100
+
+    Ensure file handles are closed using with statement
+
+commit d59d44624ac7b9afa9ecc949873fd29266dfde67
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Aug 25 18:44:14 2014 -0500
+
+    prepare for 1.2.3 release
+
+commit 6b78d7656864d3b29830b58f2d85312bf19913ba
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Aug 25 18:22:20 2014 -0500
+
+    add Daniel Nephin to AUTHORS.rst
+
+commit 709c1770aac577307352d2aae525df5d79fb73c5
+Merge: 6d8ef5b 8b73aff
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Aug 25 18:12:33 2014 -0500
+
+    Merge pull request #14 from dnephin/custom_wait_and_stop
+    
+    Support custom wait and stop functions
+
+commit 8b73aff04ee320ce27570c447028c30817f23d1a
+Author: Daniel Nephin <dnephin@yelp.com>
+Date:   Fri Aug 22 07:31:21 2014 -0700
+
+    Support custom wait and stop functions.
+
+commit 6d8ef5bd03365836910edcd3398331ab22b17c00
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Thu Jun 26 13:39:04 2014 -0500
+
+    bump version to 1.2.3-dev, add 3.3/3.4 classifiers
+
+commit 9a6be782d6618f3d1048b4f5c1226d6aeefc73dd
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Thu Jun 26 13:35:09 2014 -0500
+
+    add Saul Shanabrook to AUTHORS.rst
+
+commit 8cd01a05ba8079c10836bd418b3a051c59f3b639
+Merge: 52ebba0 9e60bac
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Thu Jun 26 13:32:46 2014 -0500
+
+    Merge pull request #13 from saulshanabrook/patch-1
+    
+    Add python 3.3 and 3.4 support
+
+commit 9e60bac40ade07b8d35989f0d45a444cbd7f2740
+Author: Saul Shanabrook <s.shanabrook@gmail.com>
+Date:   Thu Jun 26 12:46:21 2014 -0400
+
+    Add python 3.3 and 3.4 support
+
+commit 52ebba0af2d1782e74524a90b0309a4b95b3581e
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Fri Jun 20 02:30:58 2014 -0500
+
+    prepare for 1.2.2 release
+
+commit cc5cc905ea9296613c90e6fde345170b2f281395
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Fri Jun 20 02:24:55 2014 -0500
+
+    update HISTORY.rst for 1.2.2 release
+
+commit 8ca5b41bcaf6bae12a67627899fe4326d6b7aa44
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Fri Jun 20 02:16:50 2014 -0500
+
+    add comments from rdooley, add comment around stop behavior
+
+commit e5fc513f5d593c052a537cbb8483d560e0516bbf
+Merge: bac9ab8 1ca4a7d
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Fri Jun 20 01:43:48 2014 -0500
+
+    Merge pull request #10 from simondolle/bugfix/#8_raise_retry_error_on_failure
+    
+    Bugfix/#8 raise retry error on failure
+
+commit 1ca4a7d31d90a17f0cbdd4666e8d9be00f60aa4d
+Author: Simon Dollé <simon.dolle@gmail.com>
+Date:   Sun Jun 15 16:39:19 2014 +0200
+
+    Update AUTHORS.rst
+
+commit 017dfa7efef5c0d84c83179c08633b82bd9a4eb2
+Author: Simon Dollé <simon.dolle@gmail.com>
+Date:   Sun Jun 15 16:36:20 2014 +0200
+
+    If possible, raise the last exception when stopping
+    
+    When we stop retrying because of recurring exceptions,
+    we expect the decorator to raise the last exception.
+    (if wrap_exception==False)
+    This commit fixes issue #8.
+
+commit 868fcd8ede2d72fa5afb0207efbdfb430edeff07
+Author: Simon Dollé <simon.dolle@gmail.com>
+Date:   Sun Jun 15 16:27:54 2014 +0200
+
+    Test exception type on failure.
+    
+    When we stop retrying, because of recurring exception
+    we expect the decorator to raise the last raised exception
+    without any wrapping (if wrap_exception==False)
+    cf #8
+    We test this behavior in a new unit test.
+
+commit bac9ab8621d54428cdb5f9778acbb121f2e2fa11
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon May 5 12:30:39 2014 -0500
+
+    bump version up to 1.2.2-dev
+
+commit e0ebef9d2b3571be4f788e9d7fa02561d8ecaa8a
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon May 5 12:15:02 2014 -0500
+
+    update HISTORY.rst, bump version up to 1.2.1 for release
+
+commit 036672e4b18ded2b9b0d13a9aa58991a09ff2f53
+Merge: c86e061 ff817d9
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon May 5 19:11:28 2014 +0200
+
+    Merge pull request #5 from alexkuang/master
+    
+    Fix AttributeError when explicitly specifying wait type ...
+
+commit ff817d98fc98b722befb3bbb1a6a53cc3f207a5d
+Author: Alex Kuang <akuang@bizo.com>
+Date:   Mon May 5 08:58:26 2014 -0400
+
+    Fix AttributeError when explicitly specifying wait type, and add appropriate regression tests. (fixes #4)
+
+commit c86e061eaa65b960ce6c56439a05d9f1c9d55717
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun May 4 20:46:54 2014 -0500
+
+    update HISTORY.rst for 1.2.0 release
+
+commit eace177e368b5194db7e83ee2164b157cdea0b95
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun May 4 20:37:59 2014 -0500
+
+    prepare for 1.2.0 release
+
+commit b95ae91b113867264d42081549c09931cce00d4f
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun May 4 20:37:32 2014 -0500
+
+    add a crude check for a custom exception message in the test suite
+
+commit 389d407f9d8faf55917627b77037b003f3a8b4d0
+Merge: 6bc111f 5271e77
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon May 5 03:15:21 2014 +0200
+
+    Merge pull request #3 from underrun/master
+    
+    remove need for specification of stop/wait type
+
+commit 5271e7790e9e2bbe52ea03a61c6e1f5d4fc751b1
+Author: Derek Wilson <dwilson@domaintools.com>
+Date:   Fri May 2 14:52:06 2014 -0700
+
+    remove need for specification of stop/wait type
+    
+    because it can be inferred from the args passed in
+
+commit 6bc111fd90786a8f137b4b1d44a76bd9e9b4d465
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Mar 31 01:40:10 2014 -0500
+
+    prepare for 1.1.0 release
+
+commit 553e2221fc7154034a269ea0522d97a58111b292
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Mar 31 01:32:21 2014 -0500
+
+    Update HISTORY.rst
+
+commit 49551b1bc04bd3c0fe227ad0440b0513c2b28062
+Merge: f728447 28e56fa
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Mon Mar 31 01:26:01 2014 -0500
+
+    Merge pull request #2 from rholder/1-propagate-tracebacks
+    
+    propagate complete tracebacks #1
+
+commit 28e56fa56a080153896060eaf41a36c6d1bb707a
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Mar 31 01:11:32 2014 -0500
+
+    add even moar Python 3.x compatibility hacks from the six project, update license
+
+commit f53a468a6dcd253d56e5e4c9af6ddec13de2ad62
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Mar 30 22:54:18 2014 -0500
+
+    let's see if Python 3.2.x is happy now...
+
+commit e2ba41fc763884bd07507bc85ef08ef0f93ce3e9
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Mar 30 22:32:08 2014 -0500
+
+    Fix up Python 2.6 and Python 3.2 compatibility
+
+commit f405d7ecc33cd31cfe8cc60cce70ba78cc444577
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sun Mar 30 22:21:53 2014 -0500
+
+    propagate complete tracebacks such that they show up in nested stack frames, adjust api and tests #1
+
+commit f728447c8cc614fbcd056d6f062e4cdd126e7a49
+Author: Ray Holder <ray.holder+github@gmail.com>
+Date:   Thu Nov 7 18:37:57 2013 -0600
+
+    adding version and download badges
+
+commit 5ac66cf291fa6d017d28a56355cc50f476cc08db
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Wed Mar 20 03:01:48 2013 -0500
+
+    clean up the classifiers so they appear correctly on pypi, add license metadata, prep for release
+
+commit c88af28dc11b52c471d2d0bbf1ce1a8418c8aa39
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Wed Mar 20 01:57:21 2013 -0500
+
+    add note about Python 2.x/3.x compatibility and patch up test suite to run under Python 3
+
+commit 8035a32c1bb8f80150498017b1e35815b01790e9
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Wed Mar 20 01:39:37 2013 -0500
+
+    fixed a bug where classes not extending from the Python exception hierarchy could slip through, preparing for 1.0.1 release
+
+commit a7a6a432530400a67ed33416b5e76727217738fa
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 02:10:36 2013 -0600
+
+    add missing files...
+
+commit 8ee7df072e4e08274ca7e433ac79f02f67b2eaa1
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 01:38:38 2013 -0600
+
+    typo... um... yeah...
+
+commit d51df31bda58254f322c4056d771256210fa8c9a
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 01:35:55 2013 -0600
+
+    clean up RST for PyPI, add some better annotations to examples
+
+commit e9a0bf4e8fd9aa23edb9ff0002fd698d2ce67b89
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:54:10 2013 -0600
+
+    Python 3.2 compatibility fix, since we don't have sys.maxint anymore...
+
+commit f2237dfecd96eddd0c02afd3ddc52a5225315a22
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:29:33 2013 -0600
+
+    sanitize setup.py one more time before release
+
+commit d2bb0f06f6c06e00126cfda17b67cf6cc3d2a16c
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:29:01 2013 -0600
+
+    add a few more tests for some edge cases
+
+commit c4f99b5c0091379d48c2a10481a3c3e241b1592a
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:26:39 2013 -0600
+
+    add configurable support for wrapping any raised Exception in a RetryError instead of just raising it directly, add a few more comments
+
+commit b842154ded92ac17b377e7993d9859c5c7744337
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:24:52 2013 -0600
+
+    stop committing nonsense examples...
+
+commit 31b33d7f54845974772ccce375d75cd9dae1bc38
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Tue Jan 22 00:21:17 2013 -0600
+
+    add a bunch of examples since they're more succinct than a full api description
+
+commit 90437ad8b5e05edff4da1d6737ed05aa654818d5
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 18:51:25 2013 -0600
+
+    adding AUTHORS.rst
+
+commit f913c44737febac73b8c752195543456fb2743d1
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 18:49:12 2013 -0600
+
+    flushing out the README.rst a bit more
+
+commit fd4d0e8470a95df48ed0d09f8c23a0054b5bd97d
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 18:47:43 2013 -0600
+
+    default to retry on any exception, handle @retry and @retry() behavior
+
+commit 77ecdf01fd8232551f58649f7e7dcefa80f46257
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 02:15:54 2013 -0600
+
+    update history
+
+commit 4c30bdb48f4e0afb830d8284bdfd42cb20d58d49
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 02:14:31 2013 -0600
+
+    add test suite, clean up packaging
+
+commit a6e0b2e702df5bb7f479ebd7e0ca3ced88e483b8
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 02:12:21 2013 -0600
+
+    ignore packaging and pyc's
+
+commit 8c7f48d5f1a475c5e544eb7304634a36557bed21
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Mon Jan 21 02:11:32 2013 -0600
+
+    add Travis CI support
+
+commit a56a5741f72d043a21c10c880d14b492e92ad448
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 23:36:02 2013 -0600
+
+    drop in an __init__.py
+
+commit da5e3e9778e135997f3a795bcbebd7ecd0748f82
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 23:34:41 2013 -0600
+
+    adding HISTORY.rst
+
+commit 946c3ff731247e589a0c19997ce6f1dd7691032d
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 23:06:53 2013 -0600
+
+    clean up some TODO's and comments
+
+commit bf2248c2dd504e14c17ad741e60771a4a3586e48
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 22:56:10 2013 -0600
+
+    adding first stable implementation, reasonable passing test coverage
+
+commit 987c363146ff8a8e05f048571995987b1e5310a9
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 22:54:58 2013 -0600
+
+    add minimal readme
+
+commit 6317adfe060fd4437ac4cacab879df3ac4179901
+Author: Ray Holder <ray@blacklocus.com>
+Date:   Sat Jan 19 22:37:34 2013 -0600
+
+    add license and other project boilerplate
